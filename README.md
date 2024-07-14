@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ConnectVerse
 
-## Getting Started
+ConnectVerse is a robust online platform designed for engaging discussions and community interaction. Built with user experience in mind, ConnectVerse offers a variety of features to facilitate seamless communication and knowledge sharing among users.
 
-First, run the development server:
+Key Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+❌User Registration and Authentication: Easily sign up for a new account or log in securely with existing credentials.
+❌Topic Creation and Posting: Initiate and participate in discussions across diverse categories such as technology, hobbies, advice, and support.
+❌Interactive Engagement: Like posts to show appreciation, comment to share insights, and reply for threaded discussions.
+❌Personalization: Customize user profiles with profile pictures, bios, and additional details to enhance community connections.
+❌Direct Messaging: Enable private conversations between users for more personal interactions.
+❌Search and Navigation: Effortlessly find specific topics and posts using advanced search functionalities and intuitive navigation.
+❌Real-Time Notifications: Stay updated with instant notifications for new replies, likes, mentions, and messages.
+❌Responsive Design: Enjoy a user-friendly interface that adapts seamlessly across devices for a consistent browsing experience.
+--Work in progress...--
