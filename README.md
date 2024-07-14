@@ -13,4 +13,3 @@ ConnectVerse is a robust online platform designed for engaging discussions and c
 - ❌**Responsive Design:** Enjoy a user-friendly interface that adapts seamlessly across devices for a consistent browsing experience.
 
 --Work in progress...--
->>>>>>> f366c1f5d28cbed427de8f557810ee0295b06e79
