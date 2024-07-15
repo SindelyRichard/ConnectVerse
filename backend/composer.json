@@ -1,0 +1,17 @@
+{
+    "name": "rsind/backend",
+    "autoload": {
+        "psr-4": {
+            "Rsind\\Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Richard Sindely",
+            "email": "rsindely@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.0"
+    }
+}
