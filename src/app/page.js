@@ -1,12 +1,22 @@
+'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost/api/ForumApi.php')
+      .then(response => response.json())
+      .then(data => setMessage(data.message))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
+          Get started by editing asdasd {message} &nbsp;
           <code className={styles.code}>src/app/page.js</code>
         </p>
         <div>

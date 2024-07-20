@@ -12,6 +12,7 @@
         }
     ],
     "require": {
-        "slim/slim": "^4.0"
+        "slim/slim": "^4.0",
+        "mongodb/mongodb": "^1.19"
     }
 }
