@@ -3,7 +3,7 @@
         'name' => 'rsind/backend',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '499ed01463dc19b7ac62ff8bdf3af345c250ecca',
+        'reference' => '8d7fa1eaaf44ba2702df6332bf305366a20d213e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -85,7 +85,7 @@
         'rsind/backend' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '499ed01463dc19b7ac62ff8bdf3af345c250ecca',
+            'reference' => '8d7fa1eaaf44ba2702df6332bf305366a20d213e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

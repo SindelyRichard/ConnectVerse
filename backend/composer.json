@@ -13,6 +13,7 @@
     ],
     "require": {
         "slim/slim": "^4.0",
-        "mongodb/mongodb": "^1.19"
+        "mongodb/mongodb": "*",
+        "symfony/polyfill-php81": "*"
     }
 }

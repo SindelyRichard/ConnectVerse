@@ -11,3 +11,35 @@ ConnectVerse is a robust online platform designed for engaging discussions and c
 - ❌**Responsive Design:** Enjoy a user-friendly interface that adapts seamlessly across devices for a consistent browsing experience.
 
 --Work in progress...--
+Setup Instructions
+To ensure the project functions correctly, please follow these steps:
+
+**Install Composer:**
+
+Download and install Composer from getcomposer.org.
+**Install XAMPP:**
+
+Download and install XAMPP from apachefriends.org.
+After installation, configure the DocumentRoot to point to the backend directory of your project.
+**Clone the Project:**
+
+Clone the repository to your local machine using:
+git clone <repository_url>
+
+**Troubleshooting:**
+
+If the project does not work after cloning, execute the following commands:
+
+rm -rf vendor
+rm composer.lock
+composer install
+These commands will remove the existing vendor directory and composer.lock file, then reinstall the dependencies.
+
+**MongoDB Extension:**
+
+Download the MongoDB PHP extension (DLL file) and place it in your PHP ext directory.
+Ensure the extension is enabled in your php.ini file:
+
+extension=mongodb.dll
+Following these steps should resolve common issues and get the project up and running.
+
