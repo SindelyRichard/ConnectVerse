@@ -10,8 +10,8 @@ ConnectVerse is a robust online platform designed for engaging discussions and c
 - ❌**Search and Navigation:** Effortlessly find specific topics and posts using advanced search functionalities and intuitive navigation.
 - ❌**Responsive Design:** Enjoy a user-friendly interface that adapts seamlessly across devices for a consistent browsing experience.
 
---Work in progress...--
-Setup Instructions
+
+**Setup Instructions**
 To ensure the project functions correctly, please follow these steps:
 
 **Install Composer:**
