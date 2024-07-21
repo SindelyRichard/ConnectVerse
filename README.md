@@ -12,7 +12,7 @@ ConnectVerse is a robust online platform designed for engaging discussions and c
 
 
 **Setup Instructions** <br />
-To ensure the project functions correctly, please follow these steps:
+To ensure the project functions correctly, please follow these steps:<br />
 
 **Install Composer:** <br />
 
