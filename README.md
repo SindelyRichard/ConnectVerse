@@ -11,34 +11,34 @@ ConnectVerse is a robust online platform designed for engaging discussions and c
 - ❌**Responsive Design:** Enjoy a user-friendly interface that adapts seamlessly across devices for a consistent browsing experience.
 
 
-**Setup Instructions** <br \>
+**Setup Instructions** <br />
 To ensure the project functions correctly, please follow these steps:
 
-**Install Composer:** <br \>
+**Install Composer:** <br />
 
-Download and install Composer from getcomposer.org.<br \>
-**Install XAMPP:** <br \>
+Download and install Composer from getcomposer.org.<br />
+**Install XAMPP:** <br />
 
-Download and install XAMPP from apachefriends.org.<br \>
-After installation, configure the DocumentRoot to point to the backend directory of your project. <br \>
-**Clone the Project:** <br \>
+Download and install XAMPP from apachefriends.org.<br />
+After installation, configure the DocumentRoot to point to the backend directory of your project. <br />
+**Clone the Project:** <br />
 
-Clone the repository to your local machine using: <br \>
-git clone <repository_url> <br \>
+Clone the repository to your local machine using: <br />
+git clone <repository_url> <br />
 
-**Troubleshooting:** <br \>
+**Troubleshooting:** <br />
 
-If the project does not work after cloning, execute the following commands: <br \>
+If the project does not work after cloning, execute the following commands: <br />
 
-rm -rf vendor<br \>
-rm composer.lock<br \>
-composer install<br \>
-These commands will remove the existing vendor directory and composer.lock file, then reinstall the dependencies. <br \>
+rm -rf vendor<br />
+rm composer.lock<br />
+composer install<br />
+These commands will remove the existing vendor directory and composer.lock file, then reinstall the dependencies. <br />
 
-**MongoDB Extension:** <br \>
+**MongoDB Extension:** <br />
 
-Download the MongoDB PHP extension (DLL file) and place it in your PHP ext directory. <br \>
-Ensure the extension is enabled in your php.ini file: <br \>
-<br \>
-extension=mongodb.dll <br \>
-Following these steps should resolve common issues and get the project up and running. <br \>
+Download the MongoDB PHP extension (DLL file) and place it in your PHP ext directory. <br />
+Ensure the extension is enabled in your php.ini file: <br />
+<br />
+extension=mongodb.dll <br />
+Following these steps should resolve common issues and get the project up and running. <br />
