@@ -40,5 +40,5 @@ These commands will remove the existing vendor directory and composer.lock file,
 Download the MongoDB PHP extension (DLL file) and place it in your PHP ext directory. <br />
 Ensure the extension is enabled in your php.ini file: <br />
 <br />
-extension=mongodb.dll <br />
+extension=mongodb <br />
 Following these steps should resolve common issues and get the project up and running. <br />
