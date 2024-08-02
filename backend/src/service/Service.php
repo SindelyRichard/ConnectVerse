@@ -20,16 +20,5 @@ class TestService{
         $result = $collection->insertOne(['message' => $message]);
         return $result->getInsertedCount() === 1;
     }
-
-    public static function message() {
-        $adasd = "helloka";
-        self::saveMessage($adasd);
-        $client = self::getClient();
-        $collection = $client->forumTest->test;
-        $document = $collection->findOne([]);
-        
-        return $document ? $document['message'] : 'No message found';
-    }
-   
 }
 ?>
