@@ -14,8 +14,6 @@
   width: 60%;
   height: 30%;
   text-align: center;
-  border-radius: 25%;
- 
 }
 
 .logo_image{
@@ -26,9 +24,9 @@
 }
 
 .main_div{
-  
   width: 60%;
   box-sizing: border-box;
   margin: 1%;
 }
+
 
