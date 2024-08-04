@@ -5,18 +5,23 @@ import { useState, useEffect } from 'react';
 import CreatePost from "./pages/create-post-component/create-post-component";
 
 export default function Home() {
-  
+
   return (
     <main className={styles.main}>
-      <div className={styles.logo_box}>
-       <img
-       src="/logo.jpg"
-       alt="ConnectVerse logo"
-       className={styles.logo_image}
-       />
+      <div className={styles.container}>
+        <div className={styles.logo_box}>
+          <img
+            src="/logo.jpg"
+            alt="ConnectVerse logo"
+            className={styles.logo_image}
+          />
+        </div>
+        <div className={styles.login}>
+          
+        </div>
       </div>
       <div className={styles.main_div}>
-        <CreatePost/>
+        <CreatePost />
       </div>
     </main>
   );

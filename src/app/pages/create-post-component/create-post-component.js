@@ -13,7 +13,6 @@ export default function CreatePost() {
         dateNow.setHours(dateNow.getHours()+2);
         const date = dateNow.toISOString();
         const result = await apiRequest('create_post',{text,date});
-        console.log(result);
         setText('');
     }
     return(
