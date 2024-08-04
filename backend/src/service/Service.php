@@ -13,11 +13,11 @@ class TestService{
         return self::$client;
     }
 
-    public static function saveMessage($message) {
+    public static function saveMessage($message,$date) {
         $client = self::getClient();
         $collection = $client->forumTest->test;
         
-        $result = $collection->insertOne(['message' => $message]);
+        $result = $collection->insertOne(['message' => $message, 'date' => $date]);
         return $result->getInsertedCount() === 1;
     }
 }

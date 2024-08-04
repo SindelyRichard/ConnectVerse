@@ -9,7 +9,11 @@ export default function CreatePost() {
     }
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const result = await apiRequest('create_post',{text})
+        const dateNow = new Date();
+        dateNow.setHours(dateNow.getHours()+2);
+        const date = dateNow.toISOString();
+        const result = await apiRequest('create_post',{text,date});
+        console.log(result);
         setText('');
     }
     return(

@@ -4,8 +4,10 @@ class TestController{
     public static function handleRequest($data){
         switch ($data['type']){
             case 'create_post':
-                if(isset($data['text'])){
-                    $savedData = TestService::saveMessage($data['text']);
+                if(isset($data['text']) && isset($data['date'])){
+                    $text = $data['text'];
+                    $date = $data['date'];
+                    $savedData = TestService::saveMessage($text,$date);
                 }
         }
     }
