@@ -3,6 +3,7 @@
 import styles from "./page.module.css";
 import { useState, useEffect } from 'react';
 import CreatePost from "./pages/create-post-component/create-post-component";
+import Login from "./pages/login-component/login-component";
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
           />
         </div>
         <div className={styles.login}>
-          
+          <Login />
         </div>
       </div>
       <div className={styles.main_div}>
