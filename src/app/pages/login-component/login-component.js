@@ -2,14 +2,29 @@ import { apiRequest } from '@/app/services/apiService';
 import styles from './login-component.module.css';
 import { useState } from 'react';
 
-export default function Login(){
+
+export default function Login({onLoginSuccess}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
-     const handleChange = (event) =>{
+    
+    
+    const handleChange = (event) =>{
         const {name,value} = event.target;
         if(name === 'username') setUsername(value);
         if(name === 'password') setPassword(value);
+     }
+
+     const login = async (event) => {
+        event.preventDefault();
+        const result = await apiRequest('login',{username,password});
+        if(result.success){
+            alert('Login successful!');
+            if(onLoginSuccess) onLoginSuccess();
+            
+
+        }else{
+            alert('Login failed');
+        }
      }
 
      const register = async (event) => {
@@ -49,7 +64,7 @@ export default function Login(){
                 />
             </form>
             <div>
-            <button className={styles.login_button} type="button">Login</button>
+            <button className={styles.login_button} type="button" onClick={login}>Login</button>
             <button className={styles.register_button} type="button" onClick={register}>Register</button>
             </div>
         </div>

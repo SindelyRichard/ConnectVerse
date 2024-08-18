@@ -36,5 +36,13 @@ class TestService{
         $result = $collection->insertOne(['username' => $user->getUsername(),'password' => $user->getPassword()]);
         return $result->getInsertedCount() === 1;
     }
+
+    public static function checkUser(User $user){
+        $client = self::getClient();
+        $collection = $client->forumTest->users;
+
+        $result = $collection->findOne(['username' => $user->getUsername(),'password' => $user->getPassword()]);
+        return $result !== null;
+    }
 }
 ?>

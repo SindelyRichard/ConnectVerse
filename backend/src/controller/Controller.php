@@ -1,6 +1,8 @@
 <?php
 require_once '../src/service/Service.php';
 require_once '../entities/User.php';
+require_once '../src/login/Login.php';
+
 class TestController{
     public static function handleRequest($data){
         switch ($data['type']){
@@ -30,6 +32,21 @@ class TestController{
                     return ['success' => $saveUser];
                 }
             break;
+
+            case 'login':
+                if(isset($data['username']) && isset($data['password'])){
+                    $username = $data['username'];
+                    $password = $data['password'];
+                    $user = new User($username,$password);
+                    $getUser = TestService::checkUser($user);
+                    if($getUser === false){
+                        return ['success' => false];
+                    }else{
+                        $login = Login::login($user);
+                        return ['success' => $login];
+                    }
+                }
+                break;
         }
     }
 }
