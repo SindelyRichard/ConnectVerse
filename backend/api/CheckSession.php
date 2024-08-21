@@ -7,5 +7,6 @@ header("Access-Control-Allow-Credentials: true");
 
 
 $loggedIn = isset($_SESSION['username']);
-echo json_encode(['loggedIn' => $loggedIn]);
+$username = $_SESSION['username'];
+echo json_encode(['loggedIn' => $loggedIn,'username' => $username]);
 ?>

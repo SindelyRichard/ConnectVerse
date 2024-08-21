@@ -9,12 +9,14 @@ import { checkSession } from './services/apiService';
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username,setUsername] = useState('');
 
   useEffect(() => {
     const verifySession = async () => {
         try {
             const result = await checkSession();
             setIsLoggedIn(result.loggedIn);
+            setUsername(result.username);
         } catch (error) {
             console.error('Error checking session:', error);
         }
@@ -23,8 +25,14 @@ export default function Home() {
     verifySession();
 }, []);
 
-const handleLoginSuccess = () => {
+const handleLoginSuccess = (username) => {
+  setUsername(username);
   setIsLoggedIn(true);
+};
+
+const handleLogout = () =>{
+  setIsLoggedIn(false);
+  setUsername('');
 };
 
   return (
@@ -38,12 +46,14 @@ const handleLoginSuccess = () => {
           />
         </div>
         <div className={styles.login}>
-          {isLoggedIn ? <Profile /> : <Login onLoginSuccess={handleLoginSuccess} />}
+          {isLoggedIn ? <Profile onLogout={handleLogout} username={username}/> : <Login onLoginSuccess={handleLoginSuccess} />}
         </div>
       </div>
-      <div className={styles.main_div}>
-        <CreatePost />
-      </div>
+      {isLoggedIn && (
+        <div className={styles.main_div}>
+          <CreatePost />
+        </div>
+      )}
     </main>
   );
 }

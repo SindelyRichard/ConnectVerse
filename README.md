@@ -3,7 +3,7 @@
 ConnectVerse is a robust online platform designed for engaging discussions and community interaction. Built with user experience in mind, ConnectVerse offers a variety of features to facilitate seamless communication and knowledge sharing among users.
 
 **Key Features:**
-- ❌**User Registration and Authentication:** Easily sign up for a new account or log in securely with existing credentials.
+- ✅**User Registration and Authentication:** Easily sign up for a new account or log in securely with existing credentials.
 - ❌**Posting:** Initiate and participate in discussions.
 - ❌**Interactive Engagement:** Like posts to show appreciation, comment to share insights, and reply for threaded discussions.
 - ❌**Personalization:** Customize user profiles with bios, and additional details to enhance community connections.

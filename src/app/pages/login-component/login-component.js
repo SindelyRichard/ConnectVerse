@@ -12,20 +12,20 @@ export default function Login({onLoginSuccess}){
         const {name,value} = event.target;
         if(name === 'username') setUsername(value);
         if(name === 'password') setPassword(value);
-     }
+     };
 
      const login = async (event) => {
         event.preventDefault();
         const result = await apiRequest('login',{username,password});
         if(result.success){
             alert('Login successful!');
-            if(onLoginSuccess) onLoginSuccess();
+            if(onLoginSuccess) onLoginSuccess(username);
             
 
         }else{
             alert('Login failed');
         }
-     }
+     };
 
      const register = async (event) => {
         event.preventDefault();
@@ -42,13 +42,13 @@ export default function Login({onLoginSuccess}){
                 alert('Registration failed!');
             }
         }
-     }
+     };
     return(
         <div className={styles.login_container}>
             <form>
                 <textarea className={styles.login_form}
                 name='username'
-                maxLength={20}
+                maxLength={15}
                 placeholder='Username'
                 value={username}
                 onChange={handleChange}
