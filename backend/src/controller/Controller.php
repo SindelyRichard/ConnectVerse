@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 require_once '../src/service/Service.php';
 require_once '../entities/User.php';
 
@@ -42,7 +42,7 @@ class TestController{
                     if($getUser === false){
                         return ['success' => false];
                     }else{
-                        
+                        $_SESSION['username']=$user->getUSername();
                         return ['success' => true];
                     }
                 }
