@@ -1,7 +1,6 @@
 <?php
 require_once '../src/service/Service.php';
 require_once '../entities/User.php';
-require_once '../src/login/Login.php';
 
 class TestController{
     public static function handleRequest($data){
@@ -39,11 +38,12 @@ class TestController{
                     $password = $data['password'];
                     $user = new User($username,$password);
                     $getUser = TestService::checkUser($user);
+                    
                     if($getUser === false){
                         return ['success' => false];
                     }else{
-                        $login = Login::login($user);
-                        return ['success' => $login];
+                        
+                        return ['success' => true];
                     }
                 }
                 break;

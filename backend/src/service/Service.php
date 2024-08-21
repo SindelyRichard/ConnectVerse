@@ -1,4 +1,5 @@
 <?php
+
 require_once '../entities/User.php';
 require '../vendor/autoload.php';
 use MongoDB\Client as MongoClient;
@@ -42,6 +43,7 @@ class TestService{
         $collection = $client->forumTest->users;
 
         $result = $collection->findOne(['username' => $user->getUsername(),'password' => $user->getPassword()]);
+        
         return $result !== null;
     }
 }

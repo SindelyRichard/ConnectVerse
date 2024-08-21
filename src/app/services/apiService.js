@@ -5,6 +5,7 @@ export const apiRequest = async (type, data) => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include',
             body: JSON.stringify({ type, ...data })
         });
         if (!response.ok) {
@@ -19,11 +20,12 @@ export const apiRequest = async (type, data) => {
 
 export const checkSession = async () => {
     try {
-        const response = await fetch('http://localhost/src/login/CheckSession.php', {
+        const response = await fetch('http://localhost/api/CheckSession.php', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-            }
+            },
+            credentials: 'include'
         });
         if (!response.ok) {
             throw new Error('Network response was not ok.');
