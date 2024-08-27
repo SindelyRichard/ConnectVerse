@@ -3,6 +3,7 @@
 require_once '../entities/User.php';
 require '../vendor/autoload.php';
 use MongoDB\Client as MongoClient;
+use Ramsey\Uuid\Uuid;
 class TestService{
     private static $client = null;
 
@@ -14,11 +15,12 @@ class TestService{
         return self::$client;
     }
 
-    public static function saveMessage($message,$date) {
+    public static function saveMessage($message,$date,$username) {
         $client = self::getClient();
         $collection = $client->forumTest->test;
+        $uuid=Uuid::uuid4();
         
-        $result = $collection->insertOne(['message' => $message, 'date' => $date]);
+        $result = $collection->insertOne(['_id' => $uuid->toString(),'username' => $username,'message' => $message, 'date' => $date]);
         return $result->getInsertedCount() === 1;
     }
 

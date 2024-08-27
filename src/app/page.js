@@ -51,7 +51,7 @@ const handleLogout = () =>{
       </div>
       {isLoggedIn && (
         <div className={styles.main_div}>
-          <CreatePost />
+          <CreatePost username={username}/>
         </div>
       )}
     </main>

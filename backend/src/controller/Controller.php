@@ -7,10 +7,11 @@ class TestController{
         switch ($data['type']){
 
             case 'create_post':
-                if(isset($data['text']) && isset($data['date'])){
+                if(isset($data['text']) && isset($data['date']) && isset($data['username'])){
                     $text = $data['text'];
                     $date = $data['date'];
-                    $savedData = TestService::saveMessage($text,$date);
+                    $username = $data['username'];
+                    $savedData = TestService::saveMessage($text,$date,$username);
                 }
             break;
 

@@ -2,7 +2,7 @@ import { apiRequest } from '@/app/services/apiService';
 import styles from './create-post-component.module.css';
 import { useState } from 'react';
 
-export default function CreatePost() {
+export default function CreatePost({username}) {
     const [text, setText] = useState('');
     const handleChange = (event) => {
         setText(event.target.value);
@@ -12,7 +12,7 @@ export default function CreatePost() {
         const dateNow = new Date();
         dateNow.setHours(dateNow.getHours()+2);
         const date = dateNow.toISOString();
-        const result = await apiRequest('create_post',{text,date});
+        const result = await apiRequest('create_post',{text,date,username});
         setText('');
     }
     return(
