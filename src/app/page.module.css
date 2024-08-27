@@ -38,8 +38,8 @@
 
 .login{
   display: flex;
-  width: 23%;
-  margin-left: auto;
+  width: 300px;
+  margin-left: 30px;
   }
 
 .main_postcontainer{
