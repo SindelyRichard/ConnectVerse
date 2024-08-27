@@ -6,6 +6,7 @@ import CreatePost from "./pages/create-post-component/create-post-component";
 import Login from "./pages/login-component/login-component";
 import Profile from "./pages/profile/profile-component";
 import { checkSession } from './services/apiService';
+import Post from "./pages/post-component/post-component";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,6 +55,9 @@ const handleLogout = () =>{
           <CreatePost username={username}/>
         </div>
       )}
+      <div className={styles.main_postcontainer}>
+        <Post/>
+      </div>
     </main>
   );
 }

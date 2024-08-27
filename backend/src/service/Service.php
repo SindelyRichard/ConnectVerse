@@ -1,9 +1,11 @@
 <?php
 
 require_once '../entities/User.php';
+require_once '../entities/Forum.php';
 require '../vendor/autoload.php';
 use MongoDB\Client as MongoClient;
 use Ramsey\Uuid\Uuid;
+
 class TestService{
     private static $client = null;
 
@@ -13,6 +15,27 @@ class TestService{
             self::$client = new MongoClient('mongodb://localhost:27017'); 
         }
         return self::$client;
+    }
+
+    public static function getPosts(){
+        $client = self::getClient();
+        $collection = $client->forumTest->test;
+
+        $result = $collection->find();
+
+        $posts = [];
+        foreach ($result as $item) {
+            $posts[]=[
+            'id' => $item->_id,
+            'username' => $item->username,
+            'message' => $item->message,
+            'date' => $item->date
+            ];
+            
+            
+        }
+
+        return $posts;
     }
 
     public static function saveMessage($message,$date,$username) {

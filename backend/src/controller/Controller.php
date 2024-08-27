@@ -50,5 +50,9 @@ class TestController{
                 break;
         }
     }
+
+    public static function handlePosts(){
+        return $getPosts=TestService::getPosts();
+    }
 }
 ?>
