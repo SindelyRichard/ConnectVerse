@@ -9,6 +9,10 @@ export default function CreatePost({username}) {
     }
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (!text.trim()) {
+            alert('Please share your thoughts!');
+            return;
+        }
         const dateNow = new Date();
         dateNow.setHours(dateNow.getHours()+2);
         const date = dateNow.toISOString();
