@@ -32,3 +32,7 @@ font-weight: bold;
 .profile_picture_div{
     margin-right: 5%;
 }
+.logout{
+    margin-left: auto;
+    margin-right: 10px;
+}
