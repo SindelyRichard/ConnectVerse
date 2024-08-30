@@ -8,7 +8,8 @@ export default function Post({posts}){
             month: '2-digit', 
             day: 'numeric', 
             hour: '2-digit', 
-            minute: '2-digit' 
+            minute: '2-digit',
+            timeZone: 'UTC'
         };
         return date.toLocaleDateString('hu-HU', options);
     };
