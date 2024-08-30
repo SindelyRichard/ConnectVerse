@@ -46,7 +46,7 @@ export default function Login({onLoginSuccess}){
     return(
         <div className={styles.login_container}>
             <form>
-                <textarea className={styles.login_form}
+                <input className={styles.login_form}
                 name='username'
                 maxLength={15}
                 placeholder='Username'
@@ -55,7 +55,8 @@ export default function Login({onLoginSuccess}){
                 />
             </form>
             <form>
-                <textarea className={styles.login_form}
+                <input type="password"
+                className={styles.login_form}
                 name='password'
                 maxLength={20}
                 placeholder='Password'

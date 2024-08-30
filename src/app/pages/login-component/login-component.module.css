@@ -1,12 +1,17 @@
 .login_container{
     border: 1px solid black;
     border-radius: 25%;
-    padding: 8%;
+    padding: 10px;
     background-image: linear-gradient(lightskyblue,black);
 }
 
 .login_form{
     resize: none;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
 }
 
 .login_button{
