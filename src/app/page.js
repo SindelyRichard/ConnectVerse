@@ -5,12 +5,13 @@ import { useState, useEffect } from 'react';
 import CreatePost from "./pages/create-post-component/create-post-component";
 import Login from "./pages/login-component/login-component";
 import Profile from "./pages/profile/profile-component";
-import { checkSession } from './services/apiService';
+import { checkSession,getPosts } from './services/apiService';
 import Post from "./pages/post-component/post-component";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username,setUsername] = useState('');
+  const [posts,setPosts] =  useState([]);
 
   useEffect(() => {
     const verifySession = async () => {
@@ -25,6 +26,31 @@ export default function Home() {
 
     verifySession();
 }, []);
+
+useEffect(() => {
+  const fetchPosts = async () => {
+    try {
+      const result = await getPosts();
+      setPosts(result.posts);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+
+  fetchPosts();
+}, []);
+
+const handleNewPost = () => {
+  const fetchPosts = async () => {
+    try{
+      const result = await getPosts();
+      setPosts(result.posts);
+    }catch(error){
+      console.error('Error fetching posts',error);
+    }
+  };
+  fetchPosts();
+};
 
 const handleLoginSuccess = (username) => {
   setUsername(username);
@@ -52,11 +78,11 @@ const handleLogout = () =>{
       </div>
       {isLoggedIn && (
         <div className={styles.main_div}>
-          <CreatePost username={username}/>
+          <CreatePost username={username} onPostCreated={handleNewPost}/>
         </div>
       )}
       <div className={styles.main_postcontainer}>
-        <Post/>
+        <Post posts={posts}/>
       </div>
     </main>
   );

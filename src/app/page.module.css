@@ -4,9 +4,9 @@
   align-items: center;
   padding: 1%;
   min-height: 100vh;
-  background-image: url('/space.jpg');
+  background: url('/space.jpg') no-repeat center center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+
 }
 
 .logo_box{

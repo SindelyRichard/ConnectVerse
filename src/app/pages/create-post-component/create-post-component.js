@@ -2,7 +2,7 @@ import { apiRequest } from '@/app/services/apiService';
 import styles from './create-post-component.module.css';
 import { useState } from 'react';
 
-export default function CreatePost({username}) {
+export default function CreatePost({username,onPostCreated}) {
     const [text, setText] = useState('');
     const handleChange = (event) => {
         setText(event.target.value);
@@ -18,6 +18,8 @@ export default function CreatePost({username}) {
         const date = dateNow.toISOString();
         const result = await apiRequest('create_post',{text,date,username});
         setText('');
+        onPostCreated();
+        
     }
     return(
         <div className={styles.formWrapper}>

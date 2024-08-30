@@ -21,7 +21,7 @@ class TestService{
         $client = self::getClient();
         $collection = $client->forumTest->test;
 
-        $result = $collection->find([],['sort' => ['date' => -1]]);
+        $result = $collection->find([],['sort' => ['date' => 1]]);
 
         $posts = [];
         foreach ($result as $item) {
@@ -31,8 +31,6 @@ class TestService{
             'message' => $item->message,
             'date' => $item->date
             ];
-            
-            
         }
 
         return $posts;

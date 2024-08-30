@@ -2,21 +2,7 @@ import { getPosts } from "@/app/services/apiService";
 import { useState,useEffect } from "react";
 import styles from "./post-component.module.css";
 
-export default function Post(){
-    const [posts,setPosts] = useState('');
-    useEffect(() => {
-        const getAllPost = async () => {
-            try {
-                const result = await getPosts();
-                setPosts(result.posts);
-            } catch (error) {
-                console.error('Error checking session:', error);
-            }
-        };
-    
-        getAllPost();
-    }, []);
-
+export default function Post({posts}){
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
         const options = { 
