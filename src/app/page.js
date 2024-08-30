@@ -12,6 +12,9 @@ export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username,setUsername] = useState('');
   const [posts,setPosts] =  useState([]);
+  const [currentPage,setCurrentPage] = useState(1);
+  const [totalPages,setTotalPages] = useState(1);
+  const postsPerPage = 30;
 
   useEffect(() => {
     const verifySession = async () => {
@@ -27,29 +30,40 @@ export default function Home() {
     verifySession();
 }, []);
 
-useEffect(() => {
-  const fetchPosts = async () => {
+
+  const fetchPosts = async (page) => {
     try {
-      const result = await getPosts();
+      const result = await getPosts(page,postsPerPage);
       setPosts(result.posts);
+      const totalPosts = result.totalPosts;
+      setTotalPages(Math.ceil(totalPosts/postsPerPage))
+      if (page > totalPages) {
+        setCurrentPage(totalPages);
+        return;
+    }
+    setCurrentPage(page);
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
   };
 
-  fetchPosts();
-}, []);
+   useEffect(() => {
+    fetchPosts(currentPage);
+   },[currentPage]);
+
+   useEffect(() => {
+    if (currentPage === 1) {
+        fetchPosts(totalPages);
+    }
+}, [totalPages]);
+
 
 const handleNewPost = () => {
-  const fetchPosts = async () => {
-    try{
-      const result = await getPosts();
-      setPosts(result.posts);
-    }catch(error){
-      console.error('Error fetching posts',error);
-    }
-  };
-  fetchPosts();
+fetchPosts(currentPage);
+};
+
+const goToPage = (pageNumber) => {
+  setCurrentPage(pageNumber);
 };
 
 const handleLoginSuccess = (username) => {
@@ -83,6 +97,17 @@ const handleLogout = () =>{
       )}
       <div className={styles.main_postcontainer}>
         <Post posts={posts}/>
+        <div className={styles.pagination}>
+        {Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                            key={totalPages - index}
+                            onClick={() => goToPage(totalPages - index)}
+                            className={totalPages - index === currentPage ? styles.active : ''}
+                        >
+                            {totalPages - index}
+                        </button>
+                    ))}
+                </div>
       </div>
     </main>
   );

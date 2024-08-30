@@ -62,12 +62,12 @@ export const logoutApi = async () => {
 
 };
 
-export const getPosts = async () => {
+export const getPosts = async (page=1,limit=30) => {
     try {
-        const response = await fetch('http://localhost/api/PostApi.php', {
+        const response = await fetch(`http://localhost/api/PostApi.php?page=${page}&limit=${limit}`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             }
         });
         if (!response.ok) {

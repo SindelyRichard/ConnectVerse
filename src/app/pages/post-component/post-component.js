@@ -1,5 +1,3 @@
-import { getPosts } from "@/app/services/apiService";
-import { useState,useEffect } from "react";
 import styles from "./post-component.module.css";
 
 export default function Post({posts}){

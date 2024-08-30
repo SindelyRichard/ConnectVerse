@@ -51,8 +51,8 @@ class TestController{
         }
     }
 
-    public static function handlePosts(){
-        return $getPosts=TestService::getPosts();
+    public static function handlePosts($page = 1,$limit = 30){
+        return TestService::getPosts($page,$limit);
     }
 }
 ?>

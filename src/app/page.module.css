@@ -47,3 +47,22 @@
   width: 100vw;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background-color: #ccc;
+}
+

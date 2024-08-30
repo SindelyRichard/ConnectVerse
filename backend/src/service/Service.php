@@ -17,11 +17,17 @@ class TestService{
         return self::$client;
     }
 
-    public static function getPosts(){
+    public static function getPosts($page = 1,$limit = 30){
         $client = self::getClient();
         $collection = $client->forumTest->test;
 
-        $result = $collection->find([],['sort' => ['date' => 1]]);
+        $skip = ($page - 1) * $limit;
+
+        $totalPosts = $collection->countDocuments();
+
+        $result = $collection->find([],['sort' => ['date' => 1],'skip' => $skip,'limit' => $limit]);
+
+        
 
         $posts = [];
         foreach ($result as $item) {
@@ -33,7 +39,7 @@ class TestService{
             ];
         }
 
-        return $posts;
+        return ['posts' => $posts,'totalPosts' => $totalPosts];
     }
 
     public static function saveMessage($message,$date,$username) {
