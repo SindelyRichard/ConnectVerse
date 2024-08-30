@@ -43,7 +43,7 @@ class TestController{
                     if($getUser === false){
                         return ['success' => false];
                     }else{
-                        $_SESSION['username']=$user->getUSername();
+                        $_SESSION['username']=$user->getUsername();
                         return ['success' => true];
                     }
                 }

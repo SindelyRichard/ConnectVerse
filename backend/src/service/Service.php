@@ -26,9 +26,7 @@ class TestService{
         $totalPosts = $collection->countDocuments();
 
         $result = $collection->find([],['sort' => ['date' => 1],'skip' => $skip,'limit' => $limit]);
-
         
-
         $posts = [];
         foreach ($result as $item) {
             $posts[]=[
@@ -38,7 +36,6 @@ class TestService{
             'date' => $item->date
             ];
         }
-
         return ['posts' => $posts,'totalPosts' => $totalPosts];
     }
 
@@ -62,8 +59,9 @@ class TestService{
     public static function saveUser(User $user){
         $client = self::getClient();
         $collection = $client->forumTest->users;
+        $hashedPassword = password_hash($user->getPassword(),PASSWORD_BCRYPT);
 
-        $result = $collection->insertOne(['username' => $user->getUsername(),'password' => $user->getPassword()]);
+        $result = $collection->insertOne(['username' => $user->getUsername(),'password' => $hashedPassword]);
         return $result->getInsertedCount() === 1;
     }
 
@@ -71,9 +69,13 @@ class TestService{
         $client = self::getClient();
         $collection = $client->forumTest->users;
 
-        $result = $collection->findOne(['username' => $user->getUsername(),'password' => $user->getPassword()]);
-        
-        return $result !== null;
+        $result = $collection->findOne(['username' => $user->getUsername()]);
+        if($result !== null){
+            if(password_verify($user->getPassword(),$result->password)){
+            return true;
+            }
+        }
+        return false;
     }
 }
 ?>
