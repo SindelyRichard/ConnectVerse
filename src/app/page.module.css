@@ -64,6 +64,6 @@
 
 .pagination button.active {
   font-weight: bold;
-  background-color: blue;
+  background-image: linear-gradient(lightskyblue,black);
 }
 
