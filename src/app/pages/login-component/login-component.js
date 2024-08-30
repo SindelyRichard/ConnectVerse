@@ -6,12 +6,42 @@ import { useState } from 'react';
 export default function Login({onLoginSuccess}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const isValidUsername = (value) => {
+        const usernamePattern = /^[A-Za-z_]+$/;
+        return usernamePattern.test(value);
+    };
     
-    
+    const containsNoSpaces = (value) => {
+        return !/\s/.test(value);
+    };
+
     const handleChange = (event) =>{
         const {name,value} = event.target;
-        if(name === 'username') setUsername(value);
-        if(name === 'password') setPassword(value);
+        if(name === 'username'){
+            if(isValidUsername(value) && containsNoSpaces(value)){
+                setUsername(value);
+            }
+            else if(value === ''){
+                setUsername('');
+            }
+            else{
+                setUsername('');
+                alert("Incorrect username");
+            }
+        }
+        if(name === 'password'){
+            if(containsNoSpaces(value)){
+                setPassword(value);
+            }
+            else if(value === ''){
+                setPassword('');
+            }
+            else{
+                setPassword('');
+                alert("Incorrect password!");
+            }
+        }
      };
 
      const login = async (event) => {
