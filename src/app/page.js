@@ -37,11 +37,7 @@ export default function Home() {
       setPosts(result.posts);
       const totalPosts = result.totalPosts;
       setTotalPages(Math.ceil(totalPosts/postsPerPage))
-      if (page > totalPages) {
-        setCurrentPage(totalPages);
-        return;
-    }
-    setCurrentPage(page);
+      setCurrentPage(page);
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
@@ -52,7 +48,7 @@ export default function Home() {
    },[currentPage]);
 
    useEffect(() => {
-    if (currentPage === 1) {
+    if (currentPage < totalPages) {
         fetchPosts(totalPages);
     }
 }, [totalPages]);
